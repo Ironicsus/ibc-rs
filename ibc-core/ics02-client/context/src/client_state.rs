@@ -249,7 +249,8 @@ pub trait ClientState<V: ClientValidationContext, E: ClientExecutionContext>:
 {
 }
 
-impl<V: ClientValidationContext, E: ClientExecutionContext, T> ClientState<V, E> for T where
+impl<V: ClientValidationContext, E: ClientExecutionContext, T> ClientState<V, E> for T
+where
     T: Send + Sync + ClientStateCommon + ClientStateValidation<V> + ClientStateExecution<E>
 {
 }
